@@ -11,160 +11,135 @@ layout: layouts/base
           <div class="usa-alert__body">
             <h2 class="usa-alert__heading">Disclaimer</h2>
             <div class="usa-alert__text grid-row grid-gap">
-              <div class="mobile:grid-col-12 desktop:grid-col-10">
+              <div class="mobile:grid-col-12 tablet:grid-col-10">
                 This website contains references to non-federal resources and organizations. The references are solely
                 for informational purposes and are not an endorsement of any non-federal entity by FEMA, Department of
                 Homeland Security, or the U.S. government.
               </div>
               <div class="mobile:grid-col-12 desktop:grid-col-2">
-                <button class="usa-button disclaimer-button" type="button">View full disclaimer</button>
+                <button class="usa-button disclaimer-button padding-y-2" type="button">View full disclaimer</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="contentRow margin-top-4">
+        <div class="contentRow margin-top-1">
           <div class="grid-row grid-gap">
-            {% include "./filterpanel.html" %}
-            <div class="desktop:grid-col-9 mobile:grid-col-12">
+
+            <div class="grid-col-12">
               {% assign imagePath = "/assets/img/states/" | append: item.Abbr | append: ".webp" %}
               {% assign stateString = item.State %}
-              {% assign imacDescription = item["IMAC Description"] %}
               {% assign emacEGC = item["EMA+E:GC"] %}
-              {% assign emacPublicPrivate = item["EMAC Public/Private"] %}
-              {% assign emacPublicPrivateState = emacPublicPrivate | slice: 0, 5 %}
-              {% assign emacPublicPrivateTerritory = emacPublicPrivate | slice: 0, 9 %}
-              {% assign emacPublicCommon = emacPublicPrivate | slice: 0, 12 %}
-              {% assign emacPublicDistrict = emacPublicPrivate | slice: 0, 8 %}
-              {% assign imacDescriptionState = imacDescription | slice: 0, 5 %}
-              {% assign imacPrivate = item["IMAC Private"] %}
-              {% assign imacPublic = item["IMAC Public"] %}
               {% assign imacPublicVariable = item["Variable-IMAC-Public"] %}
               {% assign imacPrivateVariable = item["Variable_IMAC_Private"] %}
 
-              {% assign first_eight_imacPrivate = imacPrivate | downcase | slice: 0, 8 %}
-              {% assign first_eight_imacDescription = imacDescription | downcase | slice: 0, 8 %}
-              {% assign first_eight_imacPublic = imacPublic | downcase | slice: 0, 8 %}
-
-              {% capture noKnownImacDescription %}
-                <p><span class="capitalize">{{ stateString }}</span> has {{ imacDescription | downcase }}</p>
-              {% endcapture %}
-
-              {% capture modifyImacDescription %}
-              <p>Your state/territory <strong>does not participate in EMAC</strong> and may not be able to request resources and personnel from other states during emergencies and disasters.</p>    
-              {% endcapture %}
-
               {% capture emacStandard %}
-              <p>Your state or territory has <strong>Standard EMAC</strong> which covers:</p>
-              <ul>
-                <li>sharing of resources and personnel from other EMAC states to perform building department functions after emergencies and disasters</li>
-                <li>benefits and protections for out-of-state public-sector personnel, but not for volunteer or private sector personnel</li>
+              <p><span class="capitalize">{{ stateString }}</span> has <span class="text-bold">Standard EMAC</span>
+                which covers:</p>
+              <ul class="usa-list">
+                <li>sharing of resources and personnel from other EMAC states to perform building department functions
+                  after emergencies and disasters</li>
+                <li>benefits and protections for out-of-state public-sector personnel, but not for volunteer or
+                  private-sector personnel</li>
                 <li>federal reimbursement for assistance provided by other states</li>
-              </ul>     
+              </ul>
               {% endcapture %}
 
               {% capture emacEhanced %}
-              <h4>Enhanced EMAC</h4>
-              <p>Your state or territory has <strong>Enhanced EMAC</strong> which covers:</p>
-              <ul>
-                <li>sharing of resources and personnel from other EMAC states to perform building department functions after emergencies and disasters</li>
-                <li>the mobilization and deployment of some volunteer or private sector personnel to carry out building department functions</li>
-                <li>benefits and protections for out-of-state public-sector personnel, as well as some volunteer and private sector personnel</li>
-                <li>federal reimbursement for assistance provided by other states and by volunteer or private sector entities</li>
-              </ul>     
+              <p><span class="capitalize">{{ stateString }}</span> has <span class="text-bold">Enhanced EMAC</span>
+                which covers:</p>
+              <ul class="usa-list">
+                <li>sharing of resources and personnel from other EMAC states to perform building department functions
+                  after emergencies and disasters</li>
+                <li>the mobilization and deployment of some volunteer or private sector personnel to carry out building
+                  department functions</li>
+                <li>benefits and protections for out-of-state public-sector personnel, as well as some volunteer and
+                  private sector personnel</li>
+                <li>federal reimbursement for assistance provided by other states and by volunteer or private sector
+                  entities</li>
+              </ul>
               {% endcapture %}
 
               {% capture emacNonPartipant %}
-              <p>Your state/territory <strong>does not participate in EMAC</strong> and may not be able to request resources and personnel from other states during emergencies and disasters.</p>    
-              {% endcapture %}
-
-              {% capture imacPublicOptOut %}
-              <h4>Opt-Out IMAC Program</h4>
-              <p>Your state/territory has a <strong>statewide opt-out IMAC program</strong>. This means:</p>
-              <ul>
-                <li>All local jurisdictions within the state or territory are automatically enrolled in the IMAC agreement by default and must actively choose to opt out of the agreement if they do not wish to participate.</li>
-                <li>Participating jurisdictions, such as cities and counties, can share resources and personnel to perform building department functions following disasters and emergencies.</li>
-              </ul>     
-              {% endcapture %}
-
-              {% capture imacPublicOptIn %}
-              <h4>Opt-In IMAC Program</h4>
-              <p>Your state/territory has a <strong>statewide opt-in IMAC program</strong>. This means:</p>
-              <ul>
-                <li>Local jurisdictions are not automatically enrolled and must actively choose to participate in the IMAC agreement.</li>
-                <li>Participating jurisdictions, such as cities and counties, can share resources and personnel to perform building department functions following disasters and emergencies.</li>
-              </ul>     
-              {% endcapture %}
-
-              {% capture imacPublicIndividual %}
-              <h4>Individual Compacts</h4>
-              <p>Your state/territory does not have a statewide IMAC program and instead utilizes <strong>individual compacts between local jurisdictions</strong>. This means:</p>
-              <ul>
-                <li>Jurisdictions, such as cities and counties, with individual agreements in place can share resources and personnel to perform building department functions following disasters and emergencies.</li>
-              </ul>     
-              {% endcapture %}
-
-              {% capture noImac %}
-              <h4>No Public IMAC</h4>
-              <ul>
-                <li>Your state/territory has <strong>no known significant IMAC program</strong> between public entities.</li>
-              </ul>
+              <p><span class="capitalize">{{ stateString }}</span> does not participate in EMAC and may not be able to
+                request resources and personnel from other states during emergencies and disasters.</p>
               {% endcapture %}
 
               {% capture imacIsPrivate %}
-              <h4>Private IMAC May Be Available</h4>
-              <ul>
-                <li>Your state may also allow jurisdictions to accept services and equipment from <strong>private and volunteer entities</strong> to carry out building department functions after disasters or emergencies. For more information, please review your state’s <a href="{{ '/assets/pdf/fema_mabd-region-8-fact-sheet_2023.pdf' | url }}" target="_blank">mutual aid fact sheet.</a></li>
-              </ul>
+              <li>Your state may also allow jurisdictions to accept services and equipment from <strong>private and
+                  volunteer entities</strong> to carry out building department functions after disasters or emergencies.
+                For more information, please review your state's <a
+                  href="{{ '/assets/pdf/fema_mabd-region-8-fact-sheet_2023.pdf' | url }}" target="_blank">mutual aid
+                  fact sheet.</a></li>
               {% endcapture %}
+
+              {% assign imacNotPrivateText = "For your state, secondresponders.gov is <strong>unaware of any significant
+                policies</strong> related to the deployment of private or volunteer entities to carry out building
+              department functions after disasters or emergencies." %}
 
               {% capture imacNotPrivate %}
-              <h4>Private IMAC May be Unavailable</h4>
-              <ul>
-                <li>For your state, secondresponders.gov is <strong>unaware of any significant policies</strong> related to the deployment of private or volunteer entities to carry out building department functions after disasters or emergencies.</li>
+              <li>{{ imacNotPrivateText }}</li>
+              {% endcapture %}
+
+              {% if imacPrivateVariable == "Yes" %}
+              {% assign imacPrivateText = imacIsPrivate %}
+              {% elsif imacPrivateVariable == "No" %}
+              {% assign imacPrivateText = imacNotPrivate %}
+              {% else %}
+              {% assign imacPrivateText = imacNotPrivate %}
+              {% endif %}
+
+              {% capture imacPublicOptOut %}
+              <p>Your state/territory has a <strong>statewide opt-out IMAC program</strong>. This means:</p>
+              <ul class="usa-list">
+                <li>All local jurisdictions within the state or territory are automatically enrolled in the IMAC
+                  agreement by default and must actively choose to opt out of the agreement if they do not wish to
+                  participate.</li>
+                <li>Participating jurisdictions, such as cities and counties, can share resources and personnel to
+                  perform building department functions following disasters and emergencies.</li>
+                {{ imacPrivateText }}
               </ul>
               {% endcapture %}
 
-              {% if first_eight_imacPrivate == "no known" %}
-              {% assign modifiedImacPrivate = "has " | append: imacPrivate | downcase %}     
-              {% else %}
-              {% assign modifiedImacPrivate = imacPrivate | downcase %}      
-              {% endif %}
+              {% capture imacPublicOptIn %}
+              <p>Your state/territory has a <strong>statewide opt-in IMAC program</strong>. This means:</p>
+              <ul class="usa-list">
+                <li>Local jurisdictions are not automatically enrolled and must actively choose to participate in the
+                  IMAC agreement.</li>
+                <li>Participating jurisdictions, such as cities and counties, can share resources and personnel to
+                  perform building department functions following disasters and emergencies.</li>
+                {{ imacPrivateText }}
+              </ul>
+              {% endcapture %}
 
-              {% if first_eight_imacPublic == "no known" %}
-              {% assign modifiedImacPublic = "has " | append: imacPublic | downcase %}
-              {% else %}
-              {% assign modifiedImacPublic = imacPublic | downcase %}
-              {% endif %}
+              {% capture imacPublicIndividual %}
+              <p>Your state/territory does not have a statewide IMAC program and instead utilizes <strong>individual
+                  compacts between local jurisdictions</strong>. This means:</p>
+              <ul class="usa-list">
+                <li>Jurisdictions, such as cities and counties, with individual agreements in place can share resources
+                  and personnel to perform building department functions following disasters and emergencies.</li>
+                {{ imacPrivateText }}
+              </ul>
+              {% endcapture %}
 
-              {% if first_eight_imacDescription == "no known" %}
-              {% assign modifiedImacDescription = noKnownImacDescription %}
-              {% else %}
-              {% assign modifiedImacDescription = imacDescription %}
-              {% endif %}
+              {% capture noImac %}
+              <p>Your state/territory has <strong>no known significant IMAC program</strong> between public entities.
+              </p>
+              <p>{{ imacNotPrivateText }}</p>
+              {% endcapture %}
 
-              {% if imacDescriptionState == "State" %}
-                {% assign modifiedImacDescription = modifiedImacDescription | replace_first: 'State', stateString %}
-              {% endif %}
-
-              {% if emacPublicPrivateState == "State" %}
-                {% assign modifiedEmacPublicPrivate = emacPublicPrivate | replace_first: 'State', stateString %}
-              {% endif %}
-
-              {% if emacPublicPrivateTerritory == "Territory" %}
-              {% assign modifiedEmacPublicPrivate = emacPublicPrivate | replace_first: 'Territory', stateString %}
-              {% endif %}
-
-              {% if emacPublicCommon == "Commonwealth" %}
-                {% assign modifiedEmacPublicPrivate = emacPublicPrivate | replace_first: 'Commonwealth', stateString %}
-              {% endif %}
-
-              {% if emacPublicDistrict == "District" %}
-                {% assign modifiedEmacPublicPrivate = emacPublicPrivate | replace_first: 'District', stateString %}
-              {% endif %}
+              {% capture backToTop %}
+              <div class="top-button-wrapper display-flex flex-column flex-align-end margin-y-4">
+                <a class="usa-button to-top" href="#top">
+                  <span class="display-inline-block text-top">TOP </span>
+                  <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+                    <use xlink:href="/assets/uswds/img/sprite.svg#arrow_upward"></use>
+                  </svg></a>
+              </div>
+              {% endcapture %}
 
               {% if emacEGC == "Standard EMAC" %}
               {% assign emacEGCText = emacStandard %}
-              {% elsif emacEGC == "Expanded EMAC" %}
+              {% elsif emacEGC == "Enhanced EMAC" %}
               {% assign emacEGCText = emacEhanced %}
               {% elsif emacEGC == "Not Participtaing in EMAC" %}
               {% assign emacEGCText = emacNonPartipant %}
@@ -184,138 +159,137 @@ layout: layouts/base
               {% assign imacPublicText = noImac %}
               {% endif %}
 
-              {% if imacPrivateVariable == "Yes" %}
-              {% assign imacPrivateText = imacIsPrivate %}
-              {% elsif imacPrivateVariable == "No" %}
-              {% assign imacPrivateText = imacNotPrivate %}
-              {% else %}
-              {% assign imacPrivateText = imacNotPrivate %}
-              {% endif %}
-
               <section class="usa-section intro-section">
-                <div class="grid-row grid-gap">
-                  <div class="image-block desktop:grid-col-3 mobile:grid-col-12">
+                <div class="grid-row grid-gap padding-bottom-3">
+                  <div class="image-block tablet:grid-col-3 mobile:grid-col-12">
                     <img src="{{ imagePath | url }}" role="img" alt="" aria-hidden="true" width="154" height="154" />
                   </div>
-                  <div class="intro-content-block desktop:grid-col-9 mobile:grid-col-12">
+                  <div class="intro-content-block tablet:grid-col-9 mobile:grid-col-12">
                     <h2 class="margin-y-0">
-                      Overview of Mutual Aid Resources Available in {{ item.State }}
+                      Mutual Aid Resources Available in {{ item.State }}
                     </h2>
-                    <ul class="usa-list">         
-                      <li>{{ modifiedImacDescription }}</li>
-                      <li>{{ modifiedEmacPublicPrivate }}</li>
+                    <p class="margin-bottom-0">Jump to section</p>
+                    <ul class="usa-list">
+                      <li><a class="usa-link" href="#understand-mutual-aid-section">Understanding mutual aid options in {{ stateString }}
+                      </li>
+                      <li><a class="usa-link" href="#mutual-aid-contacts-section">Mutual aid contacts in {{ stateString }}</a></li>
                     </ul>
                   </div>
                 </div>
               </section>
-              <section id="state-mutual-aid-section" class="usa-section state-mutual-aid">
-                <h2 class="margin-y-0 {{first_eight == 'No known'}}">
-                  State Mutual Aid Resources
+              <section id="understand-mutual-aid-section" class="usa-section understand-mutual-aid">
+                <h2 class="margin-top-0 margin-bottom-3">
+                  Understanding mutual aid options in {{ stateString }}
                 </h2>
-                <div class="grid-container">
-                  <h3>
-                    Intrastate Mutual Aid Compact (IMAC)
+                <div id="federal-mutual-aid-section" class="federal-mutual-aid">
+                  <h3 class="bg-accent-cool-lighter">
+                    <span class="text-bold">Federal</span> - Emergency Mutual Aid Compact (EMAC)
                   </h3>
-                  <div id="supportTypeMessage" style="display: none;">
-                    <p>No support type has been selected.</p>
-                  </div>
-                  <div id="public-personnel-section">
-                    {{ imacPublicText }}
-                  </div>
-                  <div id="private-companies-section">
-                    {{ imacPrivateText }}
-                  </div>
+                  <p>EMAC is an agreement among U.S. states and territories that allows them to share resources and
+                    personnel during disasters or emergencies. It helps states manage large-scale emergencies that
+                    exceed their individual capacities.</p>
+
+                  {{ emacEGCText }}
                 </div>
+
+                <div id="state-mutual-aid-section" class="state-mutual-aid margin-top-5">
+                  <h3 class="bg-accent-warm-lighter">
+                    <span class="text-bold">State</span> - Intrastate Mutual Aid Compact (IMAC)
+                  </h3>
+                  <p>IMAC is an agreement that allows local governments, such as cities and counties, to share resources
+                    and personnel during emergencies. IMAC helps local jurisdictions coordinate and support each other
+                    within the state. </p>
+
+                  {{ imacPublicText }}
+                </div>
+                {{ backToTop }}
               </section>
 
-              <section id="regional-mutual-aid-section" class="usa-section">
-                <h2 class="margin-y-0">
-                  Regional Mutual Aid Resources
+              <section id="mutual-aid-contacts-section" class="usa-section mutual-aid-contacts">
+                <h2 class="margin-top-0 margin-bottom-3">
+                  Mutual aid contacts
                 </h2>
+
+                <p>The following organizations are familiar with the processes for mutual aid in Florida and can help
+                  connect you with personnel and resources when you need them most. You can reach out to these
+                  organizations for guidance and assistance in navigating the EMAC and IMAC systems to support your
+                  building department during emergencies and disasters.</p>
+
                 {% assign stateData = csvData.contactsByState %}
-                <div class="grid-container">
-                  {% for entry in stateData %}
-                  {% if entry.state == item.Abbr %}
-                  <div class="contact-infomration">
-                    <h3>
-                      {{ entry.orgName }}               
-                    </h3>
-                    <h4>Contact Information</h4>
-                    <ul class="usa-list">
-                      {% for contact in entry.contacts %}
-                      <li>
+                {% for entry in stateData %}
+                {% if entry.state == item.Abbr %}
+                <div class="contact-information">
+                  <h3>
+                    {{ entry.orgName }}
+                  </h3>
+                  {% if entry.orgName == "International Code Council Regional Office" %}
+                  <p>The International Code Council (ICC) is a nonprofit association that is focused on building safety
+                    worldwide. The ICC can provide skilled volunteers to assist local building department officials with
+                    building inspections and code enforcement in the aftermath of a disaster.</p>
+                  {% endif %}
+
+                  {% if entry.orgName contains "Association of State Flood Plain Managers" %}
+                  <p>The Association of State Floodplain Managers (ASFPM) is an organization of professionals involved
+                    in floodplain management, flood hazard mitigation, National Flood Insurance Program, and flood
+                    preparedness, warning and recovery. The ASFPM can provide communities with expert assistance in
+                    handling floodplain management responsibilities, conducting damage assessments, and offering
+                    guidance on code-compliant reconstruction after a natural disaster.</p>
+                  {% endif %}
+
+                  <h4>Contact Information</h4>
+                  <div class="grid-row grid-gap-2 display-flex">
+                    {% for contact in entry.contacts %}
+                    <div class="mobile:grid-col-12 tablet:grid-col-6 addressBlock margin-bottom-3">
+                      <div class="bg-primary-lighter padding-y-1 padding-x-3 height-full radius-md">
                         {% if contact['First Name'] or contact['Title / Org'] != blank %}
                         <p>
                           {% if contact['First Name'] != blank %}
-                          {{ contact['First Name'] }} {{ contact['Last Name'] }} - <br>
+                          <span class="nameText text-bold">{{ contact['First Name'] }} {{ contact['Last Name'] }}</span><br>
                           {% endif %}
-
+  
                           {% if contact['Title / Org'] != blank %}
                           {{ contact['Title / Org'] }}
                           {% endif %}
                         </p>
                         {% endif %}
-
-                        {% if contact['Address 1'] != blank or contact['Address 2'] != blank or contact['City'] != blank %}
+  
+                        {% if contact['Address 1'] != blank or contact['Address 2'] != blank or contact['City'] != blank
+                        %}
                         <p>
                           {% if contact['Address 1'] != blank %}
                           {{ contact['Address 1'] }}<br>
                           {% endif %}
-
+  
                           {% if contact['Address 2'] != blank %}
                           {{ contact['Address 2'] }}<br>
                           {% endif %}
-
+  
                           {% if contact['City'] != blank %}
                           {{ contact['City'] }}, {{ contact['State'] }} {{ contact['Zip'] }}
                           {% endif %}
-                        </p> 
+                        </p>
                         {% endif %}
-
+  
                         <p>
                           {% if contact['Telephone'] != blank %}
-                          Office: {{ contact['Telephone'] }} <br>
+                          Office: ###-###-#### <br>
                           {% endif %}
-
+  
                           {% if contact['Cell'] != blank %}
-                          Cell: {{ contact['Cell'] }}
+                          Cell: ###-###-####
                           {% endif %}
                         </p>
                         {% if contact['E-mail'] != blank %}
-                        <p>Email: {{ contact['E-mail'] }}</p>
+                        <p>Email: <a class="usa-link" href="mailto:{{ contact['E-mail'] }}">{{ contact['E-mail'] }}</a></p>
                         {% endif %}
-                      </li>
-                      {% endfor %}
-                    </ul>
+                      </div>
+                    </div>
+                    {% endfor %}
                   </div>
-                  {% endif %}
-                  {% endfor %}
                 </div>
-              </section>
-              <section id="national-mutual-aid-section" class="usa-section">
-                <h2 class="margin-y-0">
-                  National Mutual Aid Resources
-                </h2>
-                <div class="grid-container">
-                  <h3>
-                    Emergency Mutual Aid Compact (EMAC)
-                  </h3>
-                  <h4>EMAC Status</h4>
-                  <table class="usa-table usa-table--striped">
-                    <tbody>
-                      <tr>
-                        <th scope="row">{{ emacEGC }}</th>
-                        <td>
-                          {{ emacEGCText }}     
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <h4>EMAC Public/Private Details</h4>
-                  <ul class="usa-list">         
-                    <li>{{ modifiedEmacPublicPrivate }}</li>
-                  </ul>
-                </div>
+                {% endif %}
+                {% endfor %}
+                {{ backToTop }}
               </section>
             </div>
           </div>

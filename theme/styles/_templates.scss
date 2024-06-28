@@ -59,6 +59,14 @@ iframe:focus,
   }
 }
 
+.usa-link {
+  line-height: line-height('heading', 2);
+
+  @include at-media(desktop) {
+    line-height: line-height('heading', 5);
+  }
+}
+
 .usa-logo {
   a {
     color: white;
@@ -336,18 +344,18 @@ iframe:focus,
     }
 
     .usa-list {
+      margin-top: 0;
   
       li {
         font-size: font-size('body', 3);
+        margin-bottom: units('2px');
       }
     }
-
-    border-bottom: units(2px) solid color('blue-10v');
   }
 
   .disclaimer-button {
     background: color('blue-warm-80v');
-    font-weight: 500;
+    font-weight: 700;
     line-height: line-height('body', 2);
     margin-top: units(2);
 
@@ -356,10 +364,18 @@ iframe:focus,
     }
   }
 
+  section {
+    border-bottom: units(2px) solid color('blue-10v');
+  }
+
   .usa-section {
     padding-top: units(4);
     padding-bottom: 0;
     margin-top: 0;
+
+    &:last-child {
+      border: none;
+    }
   }
 
   .usa-table {
@@ -405,6 +421,49 @@ iframe:focus,
 
     .usa-button {
       width: 100%;
+    }
+  }
+
+  .understand-mutual-aid {
+    .usa-section {
+      padding-top: units(2);
+    }
+  
+    h3 {
+      margin-top: 0;
+      padding: units(2);
+      font-weight: normal;
+    }
+  
+    .usa-list {
+      li {
+        margin-bottom: units(2);
+      }
+    }
+  }
+
+  .mutual-aid-contacts {
+    h4 {
+      margin-bottom: units(2);
+    }
+  }
+  
+  .top-button-wrapper {
+    .usa-button {
+      font-weight: normal;
+      padding: units(2);
+
+      @include at-media(desktop) {
+        margin-top: 0;
+        padding: units(1.5) units(2);
+
+      }    
+    }
+  }
+
+  .addressBlock {
+    .nameText {
+      font-size: size('body', 8);;
     }
   }
 }
