@@ -26,6 +26,13 @@ module.exports = async function () {
     skip_empty_lines: true,
   });
 
+  // Read and parse the CSV with the fact sheet links
+  const csvFactSheet = fs.readFileSync("./_data/FEMA-Regional-MABD-Fact-Sheets-Grouped-States.csv", "utf8");
+  const factSheetData = parse(csvFactSheet, {
+    columns: true,
+    skip_empty_lines: true,
+  });
+
   // Organize contacts by organization and states
   let contactsByState = [];
 
@@ -54,9 +61,22 @@ module.exports = async function () {
     stateEMAs[state].push(ema);
   });
 
+  // Create a dictionary of state to fact sheet URLs
+  let stateFactSheetLinks = {};
+
+  factSheetData.forEach((row) => {
+    const states = row["States"].split(", ").map(state => state.trim());
+    const link = row["Link"];
+    
+    states.forEach((state) => {
+      stateFactSheetLinks[state] = link;  // Assign the URL to the state
+    });
+  });
+
   return {
     stantecMABD: data1,
     contactsByState,
     stateEMAs,
+    stateFactSheetLinks,
   };
 };

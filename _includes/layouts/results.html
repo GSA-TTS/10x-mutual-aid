@@ -40,13 +40,9 @@ layout: layouts/base
               {% endcapture %}
 
               {% capture imasHasPrivateAid %}
-              <li>Your state may also allow jurisdictions to accept services and equipment from <span
-                  class="text-bold">private and volunteer entities</span> to carry out building department functions
-                after disasters or emergencies. For more information, please review your state’s <a
-                  href="{{ '/assets/pdf/fema_mabd-region-8-fact-sheet_2023.pdf' | url }}" target="_blank">mutual aid
-                  fact sheet.</a>
-              </li>
+              <li>Your state may also allow jurisdictions to accept services and equipment from <span class="text-bold">private and volunteer entities</span> to carry out building department functions after disasters or emergencies. For more information, please review your state’s <a href="{{ csvData.stateFactSheetLinks[item.Abbr] }}" target="_blank">mutual aid fact sheet.</a></li>
               {% endcapture %}
+              
 
               {% capture imasNoPrivateAid %}
               <li>For your state, secondresponders.gov is <span class="text-bold">unaware of any significant
@@ -156,16 +152,8 @@ layout: layouts/base
               <p><span class="capitalize">{{ stateString }}</span> does not participate in EMAC and may not be able to
                 request resources and personnel from other states during emergencies and disasters.</p>
               {% endcapture %}
-
-              {% capture backToTop %}
-              <div class="top-button-wrapper display-flex flex-column flex-align-end margin-y-4">
-                <a class="usa-button to-top" href="#top">
-                  <span class="display-inline-block text-top">TOP </span>
-                  <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
-                    <use xlink:href="/assets/uswds/img/sprite.svg#arrow_upward"></use>
-                  </svg></a>
-              </div>
-              {% endcapture %}
+              
+              {% include "back-to-top.html" %}
 
               <section id="understand-mutual-aid-section" class="usa-section understand-mutual-aid">
                 <h2 class="margin-top-0 margin-bottom-3">

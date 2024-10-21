@@ -1,118 +1,120 @@
 ---
-layout: layouts/default
+layout: layouts/base
 ---
 
 <div class="usa-section {{ className }} padding-top-2">
   <div class="grid-container">
-    {% include "breadcrumb.html" %}
-    <h1 class="title">{{title}}</h1>
-    <div class="usa-in-page-nav-container">
-      <aside class="usa-in-page-nav" data-heading-elements="h3" data-title-text="On this page"
-        data-title-heading-level="h2" data-scroll-offset="0" data-root-margin="0px 0px 0px 0px" data-threshold="1">
-      </aside>
-      <main class="grid-col-12 main-content usa-prose" id="main-content">
-        <div class="contentRow margin-top-1">
-          <p class="question introText">This page offers answers to frequently asked questions about mutual aid
-            assistance for local building department officials.</p>
-          <div class="question">
-            <h3>What is mutual aid?</h3>
-            <p>Mutual aid is a straightforward concept where state and local governments step in to assist each other in
-              the wake of a catastrophic event. Typically, mutual aid provides personnel or resources to affected
-              communities in the immediate aftermath of a disaster. The main goal is to accelerate community recovery
-              and reduce future risks. While mutual aid resources are often provided without charge, it's worth noting
-              that specific arrangements can vary depending on the agreements in place between jurisdictions.</p>
+    <main class="grid-col-12 usa-prose">
+      {% include "breadcrumb.html" %}
+      <h1 class="title">{{title}}</h1>
+      <div class="usa-in-page-nav-container">
+        <aside class="usa-in-page-nav" data-heading-elements="h3" data-title-text="On this page"
+          data-title-heading-level="h2" data-scroll-offset="0" data-root-margin="0px 0px 0px 0px" data-threshold="1" data-main-content-selector=".main-content">
+        </aside>
+        <div class="grid-col-12 main-content usa-prose" id="main-content">
+          <div class="contentRow margin-top-1">
+            <p class="question introText">This page offers answers to frequently asked questions about mutual aid
+              assistance for local building department officials.</p>
+            <div class="question">
+              <h3>What is mutual aid?</h3>
+              <p>Mutual aid is a straightforward concept where state and local governments step in to assist each other in
+                the wake of a catastrophic event. Typically, mutual aid provides personnel or resources to affected
+                communities in the immediate aftermath of a disaster. The main goal is to accelerate community recovery
+                and reduce future risks. While mutual aid resources are often provided without charge, it's worth noting
+                that specific arrangements can vary depending on the agreements in place between jurisdictions.</p>
+            </div>
+            <div class="question">
+              <h3>What is mutual aid for building departments?</h3>
+              <p>Natural disasters can often leave local building officials overwhelmed with the task of assessing
+                structural damage and ensuring public safety. Mutual aid for building departments is a straightforward
+                concept where skilled professionals from neighboring jurisdictions step in to assist communities with
+                inspections, hazard mitigation, and other building department functions in the wake of a catastrophic
+                event.</p>
+            </div>
+            <div class="question">
+              <h3>Who responds to mutual aid for building departments? </h3>
+              <p>Typically, mutual aid can provide communities with additional building inspectors, plan reviewers, or
+                code enforcement officers in the immediate aftermath of a disaster. These are often civil servants from
+                neighboring communities and states. In some cases, mutual aid responders can also include private
+                engineers, architects and other skilled professionals. </p>
+            </div>
+            <div class="question">
+              <h3>What assistance can mutual aid provide to a building department? </h3>
+              <p>Mutual aid can provide additional building inspectors, plan reviewers, and code enforcement officers to a
+                building department in need. These professionals can help conduct rapid damage assessments, determine
+                building safety, and process emergency permits following a disaster. They can also assist with routine
+                inspections and plan reviews during periods of high workload or staff shortages. This support helps the
+                local building department maintain service levels, ensure public safety, and expedite recovery efforts.
+              </p>
+            </div>
+            <div class="question">
+              <h3>Does mutual aid for building departments work the same in every state?</h3>
+              <p>The details of implementation, resource sharing, and reimbursement can differ significantly from one
+                state to another. Some states have formalized statewide mutual aid systems, while others rely more on
+                local or regional agreements. It's important for building officials to understand their state's specific
+                mutual aid framework and any interstate compacts that may apply. The state search tool on our <a
+                  class="usa-link" href="{{ '/' | url }}">main page</a> can help you begin to explore your state's mutual
+                aid system.</p>
+            </div>
+            <div class="question">
+              <h3>Are there protections against liability?</h3>
+              <p>Many states have enacted legislation that offers some degree of liability protection for mutual aid
+                providers lending assistance under official mutual aid agreements. This protection can vary depending on
+                state laws and specific mutual aid agreements. The contacts provided by our search tool can help you
+                understand the liability protections in place for your individual situation.</p>
+            </div>
+            <div class="question">
+              <h3>Will mutual aid cost my community?</h3>
+              <p>Reimbursement between communities in the same state can vary by state, as each state, district, and
+                territory has its own specific regulations and procedures. Typically, the requesting community (the one
+                that received aid) is responsible for reimbursing the assisting community for eligible costs. This usually
+                follows a "neighbor helping neighbor" principle, where the community benefiting from the assistance bears
+                the financial responsibility. Some states have established funds or mechanisms to help cover these costs,
+                especially in cases of larger emergencies or disasters. In such instances, the state might step in to
+                reimburse the assisting communities directly or provide funds to the requesting community for this
+                purpose.</p>
+              <p>Under the Emergency Mutual Aid Compact (EMAC), which facilitates interstate assistance, the requesting
+                state is responsible for reimbursing the assisting state, but this is often eligible for federal disaster
+                reimbursement. However, it's important to note that while the immediate deployment may not have an upfront
+                cost, your community may need to budget for potential reimbursements or cost-sharing depending on the
+                specific agreement and disaster declaration status. For example, the standard cost-share for FEMA Public
+                Assistance is typically 75% federal and 25% non-federal, though this can sometimes be adjusted for
+                catastrophic events. The requesting state would be responsible for the non-federal share, which they may
+                pass on to the local jurisdiction that received the aid.</p>
+            </div>
+            <div class="question">
+              <h3>Is an emergency declaration required to utilize mutual aid for building departments? </h3>
+              <p>Mutual aid for building departments can often be activated without a formal disaster declaration. Many
+                communities have agreements in place that allow for cooperation and resource sharing for smaller-scale
+                incidents that do not meet the threshold for a disaster declaration. However, it is important to note that
+                the specific rules and procedures can vary depending on your local and state regulations. Some areas may
+                have specific requirements for activating mutual aid, while others maintain flexible systems for sharing
+                resources.</p>
+              <p>In cases of larger disasters, a formal declaration can unlock additional resources and funding streams,
+                potentially making it easier to cover the costs of mutual aid. For interstate assistance through the
+                Emergency Management Assistance Compact (EMAC), a governor's declaration is required. EMAC is a national
+                interstate mutual aid agreement that enables states to share resources during large-scale disasters. Under
+                EMAC, the governor of the affected state must declare a state of emergency and request assistance before
+                other states can send aid. This process ensures a coordinated response and helps establish eligibility for
+                federal reimbursement.</p>
+            </div>
+            <div class="question">
+              <h3>What costs are eligible for reimbursement?</h3>
+              <p>When it comes to reimbursement under IMAC (Intrastate Mutual Aid Compact) and EMAC (Emergency Management
+                Assistance Compact), eligible costs can vary depending on the specific state agreements and the nature of
+                the emergency. Generally, reimbursable expenses often include personnel costs (such as salaries, overtime,
+                and benefits), travel expenses, equipment usage, and supplies directly related to the mutual aid response.
+                Some agreements may also cover costs for lodging, meals, and incidental expenses for deployed personnel.
+              </p>
+              <p>To ensure proper reimbursement, it's essential for both requesting and assisting entities <span
+                  class="text-bold">to carefully document all expenses</span> and follow the specific guidelines outlined
+                in their state's mutual aid agreements.</p>
+            </div>
+            {{ content }}
           </div>
-          <div class="question">
-            <h3>What is mutual aid for building departments?</h3>
-            <p>Natural disasters can often leave local building officials overwhelmed with the task of assessing
-              structural damage and ensuring public safety. Mutual aid for building departments is a straightforward
-              concept where skilled professionals from neighboring jurisdictions step in to assist communities with
-              inspections, hazard mitigation, and other building department functions in the wake of a catastrophic
-              event.</p>
-          </div>
-          <div class="question">
-            <h3>Who responds to mutual aid for building departments? </h3>
-            <p>Typically, mutual aid can provide communities with additional building inspectors, plan reviewers, or
-              code enforcement officers in the immediate aftermath of a disaster. These are often civil servants from
-              neighboring communities and states. In some cases, mutual aid responders can also include private
-              engineers, architects and other skilled professionals. </p>
-          </div>
-          <div class="question">
-            <h3>What assistance can mutual aid provide to a building department? </h3>
-            <p>Mutual aid can provide additional building inspectors, plan reviewers, and code enforcement officers to a
-              building department in need. These professionals can help conduct rapid damage assessments, determine
-              building safety, and process emergency permits following a disaster. They can also assist with routine
-              inspections and plan reviews during periods of high workload or staff shortages. This support helps the
-              local building department maintain service levels, ensure public safety, and expedite recovery efforts.
-            </p>
-          </div>
-          <div class="question">
-            <h3>Does mutual aid for building departments work the same in every state?</h3>
-            <p>The details of implementation, resource sharing, and reimbursement can differ significantly from one
-              state to another. Some states have formalized statewide mutual aid systems, while others rely more on
-              local or regional agreements. It's important for building officials to understand their state's specific
-              mutual aid framework and any interstate compacts that may apply. The state search tool on our <a
-                class="usa-link" href="{{ '/' | url }}">main page</a> can help you begin to explore your state's mutual
-              aid system.</p>
-          </div>
-          <div class="question">
-            <h3>Are there protections against liability?</h3>
-            <p>Many states have enacted legislation that offers some degree of liability protection for mutual aid
-              providers lending assistance under official mutual aid agreements. This protection can vary depending on
-              state laws and specific mutual aid agreements. The contacts provided by our search tool can help you
-              understand the liability protections in place for your individual situation.</p>
-          </div>
-          <div class="question">
-            <h3>Will mutual aid cost my community?</h3>
-            <p>Reimbursement between communities in the same state can vary by state, as each state, district, and
-              territory has its own specific regulations and procedures. Typically, the requesting community (the one
-              that received aid) is responsible for reimbursing the assisting community for eligible costs. This usually
-              follows a "neighbor helping neighbor" principle, where the community benefiting from the assistance bears
-              the financial responsibility. Some states have established funds or mechanisms to help cover these costs,
-              especially in cases of larger emergencies or disasters. In such instances, the state might step in to
-              reimburse the assisting communities directly or provide funds to the requesting community for this
-              purpose.</p>
-            <p>Under the Emergency Mutual Aid Compact (EMAC), which facilitates interstate assistance, the requesting
-              state is responsible for reimbursing the assisting state, but this is often eligible for federal disaster
-              reimbursement. However, it's important to note that while the immediate deployment may not have an upfront
-              cost, your community may need to budget for potential reimbursements or cost-sharing depending on the
-              specific agreement and disaster declaration status. For example, the standard cost-share for FEMA Public
-              Assistance is typically 75% federal and 25% non-federal, though this can sometimes be adjusted for
-              catastrophic events. The requesting state would be responsible for the non-federal share, which they may
-              pass on to the local jurisdiction that received the aid.</p>
-          </div>
-          <div class="question">
-            <h3>Is an emergency declaration required to utilize mutual aid for building departments? </h3>
-            <p>Mutual aid for building departments can often be activated without a formal disaster declaration. Many
-              communities have agreements in place that allow for cooperation and resource sharing for smaller-scale
-              incidents that do not meet the threshold for a disaster declaration. However, it is important to note that
-              the specific rules and procedures can vary depending on your local and state regulations. Some areas may
-              have specific requirements for activating mutual aid, while others maintain flexible systems for sharing
-              resources.</p>
-            <p>In cases of larger disasters, a formal declaration can unlock additional resources and funding streams,
-              potentially making it easier to cover the costs of mutual aid. For interstate assistance through the
-              Emergency Management Assistance Compact (EMAC), a governor's declaration is required. EMAC is a national
-              interstate mutual aid agreement that enables states to share resources during large-scale disasters. Under
-              EMAC, the governor of the affected state must declare a state of emergency and request assistance before
-              other states can send aid. This process ensures a coordinated response and helps establish eligibility for
-              federal reimbursement.</p>
-          </div>
-          <div class="question">
-            <h3>What costs are eligible for reimbursement?</h3>
-            <p>When it comes to reimbursement under IMAC (Intrastate Mutual Aid Compact) and EMAC (Emergency Management
-              Assistance Compact), eligible costs can vary depending on the specific state agreements and the nature of
-              the emergency. Generally, reimbursable expenses often include personnel costs (such as salaries, overtime,
-              and benefits), travel expenses, equipment usage, and supplies directly related to the mutual aid response.
-              Some agreements may also cover costs for lodging, meals, and incidental expenses for deployed personnel.
-            </p>
-            <p>To ensure proper reimbursement, it's essential for both requesting and assisting entities <span
-                class="text-bold">to carefully document all expenses</span> and follow the specific guidelines outlined
-              in their state's mutual aid agreements.</p>
-          </div>
-          {{ content }}
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   </div>
 </div>
 

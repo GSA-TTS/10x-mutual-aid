@@ -2,14 +2,65 @@
   <div class="usa-alert__body">
     <h2 class="usa-alert__heading">Disclaimer</h2>
     <div class="usa-alert__text grid-row grid-gap">
-      <div class="mobile:grid-col-12 tablet:grid-col-10">
+      <div class="mobile:grid-col-12 tablet:grid-col-10 margin-bottom-2">
         This website contains references to non-federal resources and organizations. The references are solely
         for informational purposes and are not an endorsement of any non-federal entity by FEMA, Department of
         Homeland Security, or the U.S. government.
       </div>
       <div class="mobile:grid-col-12 desktop:grid-col-2">
-        <a href="#" class="usa-button disclaimer-button padding-y-2 bg-primary-darker">View full disclaimer</button>
+        <a href="#disclaimer-modal-1" class="usa-button disclaimer-button padding-y-2 bg-primary-darker"
+          aria-controls="disclaimer-modal-1" data-open-modal>View full disclaimer</a>
       </div>
     </div>
   </div>
 </div>
+<div class="usa-modal" id="disclaimer-modal-1" aria-labelledby="modal-1-heading" aria-describedby="modal-1-description">
+  <div class="usa-modal__content">
+    <div class="usa-modal__main">
+      <h2 class="usa-modal__heading font-family-sans" id="modal-1-heading">
+        Disclaimer
+      </h2>
+      <div class="usa-prose">
+        <div id="modal-1-description">
+          <p>This information is provided with the understanding that FEMA is not engaged in rendering legal or
+            other professional services through this website. The laws and regulations discussed and cited
+            herein
+            are based upon best available public records and sources at the time of research.</p>
+
+          <p>This website provides only a summary of the referenced laws and regulations; those laws and
+            regulations may contain additional criteria, restrictions, or other qualifiers which are absent from
+            the summary provided in this website. This website also may or may not be up-to-date as these laws
+            and
+            regulations can at any time be subsequently changed, updated, or repealed by the corresponding state
+            legislatures and agencies.</p>
+
+          <p>Consult the current, official law or regulation and consult with relevant state or territory
+            authorities or a licensed attorney in the relevant state or territory to determine which laws and
+            regulations currently will apply to your situation. Do not rely solely on this website.</p>
+        </div>
+      </div>
+      <div class="usa-modal__footer">
+        <ul class="usa-button-group flex-column flex-align-end">
+          <li class="usa-button-group__item">
+            <button type="button" class="usa-button" data-close-modal>
+              Close
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button type="button" class="usa-button usa-modal__close" aria-label="Close this window" data-close-modal>
+      <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+        <use xlink:href="{{ '/assets/uswds/img/sprite.svg#close' | url }}"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+{% capture modalFixJs %}
+{% include "_includes/theme/js/modalFix.js" %}
+{% endcapture %}
+
+<script>
+    // Modal Fix
+    {{ modalFixJs | jsmin }}
+</script>

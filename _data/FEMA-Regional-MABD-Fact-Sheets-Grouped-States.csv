@@ -1,0 +1,11 @@
+Doc Type,States,Region,Link
+FEMA Regional Fact Sheet,"CT, ME, MA, NH, RI, VT",1,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_1_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"NJ, NY, PR, VI",2,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_2_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"DE, MD, PA, VA, DC, WV",3,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_3_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"AL, FL, GA, KY, MS, NC, SC, TN",4,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_4_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"IL, IN, MI, MN, OH, WI",5,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_5_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"AR, LA, NM, OK, TX",6,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_6_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"IA, KS, MO, NE",7,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_7_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"CO, MT, ND, SD, UT, WY",8,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_8_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"AZ, CA, HI, NV, GU, AS, MP, MH, FSM",9,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_9_fact_sheet_2024.pdf
+FEMA Regional Fact Sheet,"AK, ID, OR, WA",10,https://www.fema.gov/sites/default/files/documents/fema_mabd_region_10_fact_sheet_2024.pdf

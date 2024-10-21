@@ -5,19 +5,19 @@ The home page uses wide.html layout, since it extends full width of page
 
 <!DOCTYPE html>
 <html lang="en">
-{% include "meta.html" %}
-<body id="top">
-  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
-  <div class="usa-app {% if theme %}usa-app__theme-{{ theme }}{% endif %}">
-    {% include "header.html" %}
+  {% include "meta.html" %}
+  <body id="top">
+    <div class="usa-app {% if theme %}usa-app__theme-{{ theme }}{% endif %}">
 
-    {% include "menu.html" primary_navigation: site.primary_navigation secondary_navigation: site.secondary_navigation %}
+      {% include "header.html" %}
 
-    {{ content }}
+      {% include "menu.html" primary_navigation: site.primary_navigation secondary_navigation: site.secondary_navigation %}
 
-    {% include "footer.html" %}
+      {{ content }}
 
-  </div>
-  {% include "scripts.html" %}
-</body>
+      {% include "footer.html" %}
+
+    </div>
+    {% include "scripts.html" %}
+  </body>
 </html>

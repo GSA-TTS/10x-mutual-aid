@@ -1,5 +1,5 @@
 ---
-layout: layouts/default
+layout: layouts/base
 ---
 
 <div class="usa-section {{ className }} padding-top-2">
@@ -8,158 +8,340 @@ layout: layouts/default
       <main class="grid-col-12 usa-prose" id="main-content">
         {% include "breadcrumb.html" %}
         <h1 class="title">{{title}}</h1>
+        <div class="jump-to-section">
+          <p class="margin-bottom-0">Jump to section</p>
+          <ul class="usa-list">
+            <li><a class="usa-link" href="#immediate-response-section">Immediate Response</a></li>
+            <li><a class="usa-link" href="#funding-and-reimbursement-section">Funding and Reimbursement</a></li>
+            <li><a class="usa-link" href="#disaster-response-planning-section">Disaster Response Planning</a></li>
+            <li><a class="usa-link" href="#professional-organizations-section">Professional Organizations</a></li>
+          </ul>
+        </div>
         {% include "disclaimer.html" %}
+
+        {% include "back-to-top.html" %}
+
         <div class="contentRow margin-top-1">
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.floods.org/"
-            >
-            Association of State Floodplain Managers (ASFPM)
-            </a
-          >    
-          </h3>
-          <p>
-            The Association of State Floodplain Managers is a 501(c)(3) scientific and educational nonprofit organization dedicated to reducing flood loss in the nation.
-          </p>
+          <section id="immediate-response-section" class="usa-section">
+            <h2>Immediate Response</h2>
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.disasterresponse.org/"
+              >
+              Disaster Response Alliance (DRA)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Volunteer database
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> The DRA is a national database of skilled volunteers ready to assist with post-disaster activities. This resource can be used to quickly access trained professionals for safety assessments, damage inspections, and other code-related functions after a disaster.
+              </p>
+            </blockquote>
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.emacweb.org/index.php/learn-about-emac/what-is-emac"
+              >
+              Emergency Management Assistance Compact (EMAC)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Mutual aid
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> EMAC is a mutual aid agreement that allows states to share resources during emergencies. This system can be used to request additional personnel, equipment, or resources from other states to support recovery efforts.
+              </p>
+            </blockquote>
   
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.fema.gov/emergency-managers/risk-management/building-science/bcat/fact-sheets"
-            >
-            Building Code Adoption Tracking (BCAT) & Mutual Aid for Building Departments Fact Sheets
-            </a
-          >    
-          </h3>
-          <p>
-            The annual Building Code Adoption Tracking (BCAT) fact sheets provide an overview of the building code adoption status within each state and territory, organized by FEMA region.
-          </p>
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.fema.gov/emergency-managers/risk-management/building-science/bcat/fact-sheets"
+              >
+              FEMA Mutual Aid for Building Departments (MABD) Fact Sheets
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Mutual aid
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> These fact sheets explain how mutual aid agreements work for building departments. Understanding this information can help you become familiarized with laws,  regulations, benefits, and protections related to mutual aid.
+              </p>
+            </blockquote>
   
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.fema.gov/grants/mitigation/building-resilient-infrastructure-communities"
-            >
-            Building Resilient Infrastructure and Communities (BRIC) 
-            </a
-          >    
-          </h3>
-          <p>
-            BRIC supports states, local governments, tribes and territories as they work to reduce their hazard risk.    
-          </p>
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.emacweb.org/index.php/learn/mission-ready-packages"
+              >
+              Mission Ready Packages (MRP)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Mutual aid, resource packages
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> MRPs are pre-planned, comprehensive resource packages that streamline the process of obtaining and deploying all necessary resources for particular recovery tasks.
+              </p>
+            </blockquote>
 
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.floods.org/resource-center/disaster-assistance-response-team/"
-            >
-            Disaster Assistance Response Team (DART)
-            </a
-          >    
-          </h3>
-          <p>
-            The purpose of a Disaster Assistance Response Team (DART) is to assist communities handle floodplain management responsibilities after a natural disaster.
-          </p>
-          
+            {{ backToTop }}
+          </section>
 
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.disasterresponse.org/"
-            >
-            Disaster Response Alliance (DRA)
-            </a
-          >    
-          </h3>
-          <p>
-            The Disaster Response Alliance's mission is to assist local, state and federal entities with easy access to a single, national database of skilled volunteers willing to assist with response and recovery activities, including post-disaster safety assessments, building damage assessments, inspections and other code-related functions in the aftermath of a disaster.
-          </p>
-          
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.emacweb.org/index.php/learn-about-emac/what-is-emac"
-            >
-            Emergency Management Assistance Compact (EMAC)
-            </a
-          >    
-          </h3>
-          <p>
-            EMAC offers assistance during governor-declared states of emergency or disaster through a responsive, straightforward system that allows states to send personnel, equipment, and commodities to assist with response and recovery efforts in other states.
-          </p>
-          
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://flash.org/"
-            >
-            Federal Alliance for Safe Homes (FLASH)
-            </a
-          >    
-          </h3>
-          <p>
-            The Federal Alliance for Safe Homes (FLASH) — a 501(c)(3) nonprofit organization — is the leading consumer advocate for strengthening homes and safeguarding families from natural and manmade disasters.
-          </p>
+          <section id="funding-and-reimbursement-section" class="usa-section">
+            <h2>Funding and Reimbursement</h2>
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.fema.gov/grants/mitigation/building-resilient-infrastructure-communities"
+              >
+              Building Resilient Infrastructure and Communities (BRIC) 
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Disaster mitigation
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> BRIC is a FEMA program supporting hazard risk reduction efforts. Applying for BRIC funding can help implement mitigation measures and improve community resilience during the reconstruction process.
+              </p>
+            </blockquote>
 
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.iccsafe.org/"
-            >
-            International Code Council (ICC)
-            </a
-          >    
-          </h3>
-          <p>
-            The International Code Council is the leading global source of model codes and standards and building safety solutions that include product evaluation, accreditation, technology, training, and certification.
-          </p>
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.fema.gov/assistance/public/policy-guidance-fact-sheets/section-1206-building-code-and-floodplain-management-administration-and"
+              >
+              Disaster Recovery Reform Act of 2018, Section 1206 (DRRA-1206)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Code standards
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> This legislation authorizes FEMA funding for local code and floodplain management staffing after disasters. Utilizing this resource can secure additional personnel for up to 180 days, bolstering capacity to manage recovery efforts.
+              </p>
+            </blockquote>
 
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.emacweb.org/index.php/learn/mission-ready-packages"
-            >
-            Mission Ready Packages (MRP)
-            </a
-          >    
-          </h3>
-          <p>
-            A Mission Ready Package or MRP is everything you need to conduct a mission (personnel, equipment, commodities, travel, lodging, meals and more) identified in a single file with their associated costs.
-          </p>
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.fema.gov/assistance/public"
+              >
+              FEMA Public Assistance (PA) Program
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Disaster funding
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> The FEMA Public Assistance Program provides supplemental grants to state, tribal, territorial, and local governments, as well as certain private non-profit organizations, to assist in recovery from major disasters or emergencies. This program can be utilized to secure federal funding for debris removal, emergency protective measures, and the permanent restoration of infrastructure after a disaster.
+              </p>
+            </blockquote>
 
-          <h3>
-            <a
-            class="usa-link usa-link--external"
-            rel="noreferrer"
-            target="_blank"
-            href="https://nemaweb.org/"
-            >
-            National Emergency Management Association (NEMA)
-            </a
-          >    
-          </h3>
-          <p>
-            The National Emergency Management Association (NEMA) is a nonpartisan, nonprofit 501(c)(3) association dedicated to enhancing public safety by improving the nation's ability to prepare for, respond to, and recover from all emergencies, disasters, and threats to our nation's security.
-          </p>
+            {{ backToTop }}
+          </section>
+
+          <section id="disaster-response-planning-section" class="usa-section">
+            <h2>Disaster Response Planning</h2>
+
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.floods.org/resource-center/disaster-assistance-response-team/"
+              >
+              Disaster Assistance Response Teams (DART)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Floodplain management
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> A DART assists communities with floodplain management after natural disasters. Requesting DART support can help manage floodplain-related issues and ensure compliance with regulations during the recovery process.
+              </p>
+            </blockquote>
+
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.fema.gov/emergency-managers/risk-management/building-science/bcat"
+              >
+              FEMA’s Building Code Adoption Tracking (BCAT) Portal
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Code standards
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> The BCAT Portal provides information on building code adoption status by state and territory. This resource can aid in understanding the regulatory landscape and risks relevant to your area .
+              </p>
+            </blockquote>
+
+            {{ backToTop }}
+          </section>
+
+          <section id="professional-organizations-section" class="usa-section">
+            <h2>Professional Organizations</h2>
+
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.aia.org/"
+              >
+              American Institute of Architects (AIA)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Code standards
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> The AIA is a professional organization for architects they offer education, government advocacy, community redevelopment, and public outreach programs.
+              </p>
+            </blockquote>
+
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.floods.org/"
+              >
+              Association of State Floodplain Managers (ASFPM)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Floodplain management
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> ASFPM is a nonprofit organization focused on reducing flood losses. Resources and expertise from this organization can be leveraged to implement flood-resistant design and construction practices during recovery.
+              </p>
+            </blockquote>
+
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://flash.org/"
+              >
+              Federal Alliance for Safe Homes (FLASH)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Disaster mitigation
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> FLASH is a nonprofit organization advocating for stronger, safer homes. Resources and guidelines from FLASH can be used to incorporate resilient building practices into reconstruction efforts.
+              </p>
+            </blockquote>
+
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.iccsafe.org/"
+              >
+              International Code Council (ICC)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Code standards
+              </p>
+              <p>
+                <span class="text-bold">Details:</span>  The ICC is a leading source of codes and safety standards. Utilizing ICC resources can ensure that reconstruction adheres to the latest safety standards and best practices.
+              </p>
+            </blockquote>
+
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.ncsea.com/"
+              >
+              National Council of Structural Engineers Associations (NCSEA)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Floodplain management
+              </p>
+              <p>
+                <span class="text-bold">Details:</span>  The NCSEA is an organization dedicated to improving the standard level of practice in the structural engineering profession.
+              </p>
+            </blockquote>
+
+            <h3>
+              <a
+              class="usa-link usa-link--external"
+              rel="noreferrer"
+              target="_blank"
+              href="https://nemaweb.org/"
+              >
+              National Emergency Management Association (NEMA)
+              </a
+            >    
+            </h3>
+            <blockquote>
+              <p>
+                <span class="text-bold">Assistance:</span>  Emergency management
+              </p>
+              <p>
+                <span class="text-bold">Details:</span> NEMA is an association dedicated to improving emergency management capabilities. Resources and networks provided by NEMA can enhance disaster preparedness and recovery strategies.
+              </p>
+            </blockquote>
+
+            {{ backToTop }}
+          </section>
 
           {{ content }}
         </div>
