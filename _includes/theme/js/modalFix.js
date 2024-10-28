@@ -1,5 +1,7 @@
 (function() {
-    const modal=document.querySelector('#disclaimer-modal-1');
+    const modalDiv = document.querySelector('.usa-modal');
+    const modalID = modalDiv.getAttribute('id');
+    const modal = document.getElementById(modalID);
     let overlay=document.getElementsByClassName("usa-modal-overlay");
     const bodyContent = document.querySelector('.usa-app');
     const nonModals = document.querySelectorAll('body > *:not(.usa-modal-wrapper)');
@@ -18,8 +20,6 @@
             el.removeAttribute('inert');
         });
     };
-
-    //openButton.addEventListener('click',addInert);
 
     openButton.addEventListener('click',function(event) {
         addInert();        
