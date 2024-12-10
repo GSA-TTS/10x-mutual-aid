@@ -527,10 +527,10 @@ iframe:focus,
 
       .grid-col-10 {
         width: 100%;
-      }
 
-      @include at-media(desktop) {
-        width: 83.3333333333%;
+        @include at-media(desktop) {
+          width: 83.3333333333%;
+        }
       }
     }
   }
