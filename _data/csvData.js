@@ -4,7 +4,7 @@ const { parse } = require("csv-parse/sync");
 module.exports = async function () {
   // Read and parse the first CSV file
   const csv1 = fs.readFileSync(
-    "./_data/Annual_MABD_State_Data_2024.csv",
+    "./_data/Annual_MABD_State_Data.csv",
     "utf8"
   );
   const data1 = parse(csv1, {
